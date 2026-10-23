@@ -1,0 +1,27 @@
+<div class="login-wrapper">
+  <div class="login-box">
+    <div class="header-decor"></div>
+    <h1>¡Hola!</h1>
+    <p>Ingresa a la Biblioteca Virtual JEM</p>
+    
+    <label>DNI o Correo</label>
+    <input type="text" [(ngModel)]="credentials" placeholder="Escribe aquí...">
+    
+    <!-- Nuevo campo de contraseña (solo lo usa el admin) -->
+    <input *ngIf="credentials === 'admin@jem.edu.pe'" 
+           type="password" 
+           [(ngModel)]="password" 
+           placeholder="Contraseña de administrador"
+           class="mt-2">
+
+    <small>*Si eres alumno, solo pon tu DNI.</small>
+
+    <button class="btn-blue" (click)="login()">Entrar a Leer</button>
+    
+    <div class="divider"><span>O</span></div>
+
+    <button class="btn-white" (click)="loginGoogle()">
+      <span class="g-icon">G</span> Ingresar con Google
+    </button>
+  </div>
+</div>

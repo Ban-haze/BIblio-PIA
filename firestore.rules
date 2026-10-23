@@ -1,0 +1,13 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Catálogo de libros: cualquiera puede VER, sólo el admin puede escribir.
+    // Cualquier otra colección queda bloqueada por defecto.
+    match /libros/{bookId} {
+      allow read: if true;
+      allow create, update, delete: if request.auth != null
+        && request.auth.token.email == 'admin@jem.edu.pe';
+    }
+  }
+}

@@ -1,0 +1,45 @@
+<div class="admin-container">
+  <div class="admin-box">
+    <h2>Panel de Administrador - JEM</h2>
+    
+    <!-- Formulario para subir libros -->
+    <form [formGroup]="bookForm" (ngSubmit)="onSubmit()">
+      <h3>Subir Nuevo Libro</h3>
+      <input formControlName="title" placeholder="Título del Libro">
+      <input formControlName="author" placeholder="Autor">
+      <input formControlName="coverUrl" placeholder="URL de la Imagen de Portada">
+      <input formControlName="pdfUrl" placeholder="URL del Documento / PDF">
+
+      <button type="submit" [disabled]="bookForm.invalid" class="btn-red">
+        Guardar en Biblioteca
+      </button>
+    </form>
+    
+    <hr style="margin: 30px 0; border: 0; border-top: 1px solid #e2e8f0;">
+
+    <!-- Sección para visualizar y gestionar libros existentes -->
+    <h3>Libros Registrados ({{ firebase.books().length }})</h3>
+    <div class="admin-books-list">
+      <div *ngFor="let book of firebase.books()" class="admin-book-item">
+        <img [src]="book.coverUrl" alt="Portada" class="admin-thumb">
+        <div class="admin-book-info">
+          <h4>{{ book.title }}</h4>
+          <p>{{ book.author }}</p>
+        </div>
+        <button (click)="deleteBook(book.id)" class="btn-delete">Eliminar</button>
+      </div>
+      <p *ngIf="firebase.books().length === 0" class="text-muted">No hay libros en la base de datos.</p>
+    </div>
+
+    <!-- Navegación inferior -->
+    <div style="display: flex; justify-content: space-between; margin-top: 30px;">
+      <button (click)="goToCatalog()" class="btn-link">
+        Ver el catálogo
+      </button>
+      
+      <button (click)="logout()" class="btn-link" style="color: #ef4444;">
+        Cerrar Sesión
+      </button>
+    </div>
+  </div>
+</div>

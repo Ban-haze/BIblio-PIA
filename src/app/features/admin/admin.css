@@ -1,0 +1,33 @@
+.admin-container { padding: 40px 20px; }
+.admin-box {
+  background: white; max-width: 700px; margin: 0 auto;
+  padding: 30px; border-radius: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+  border-top: 5px solid #facc15;
+}
+h2, h3 { color: #1e3a8a; margin-top: 0; }
+form { display: flex; flex-direction: column; gap: 15px; }
+input {
+  padding: 12px; border: 2px solid #e2e8f0; border-radius: 10px;
+  font-size: 1rem; width: 100%; box-sizing: border-box;
+}
+.btn-red {
+  background: #ef4444; color: white; padding: 12px; border: none;
+  border-radius: 10px; font-weight: bold; font-size: 1rem; cursor: pointer;
+}
+.btn-red:disabled { background: #fca5a5; cursor: not-allowed; }
+
+/* Estilos de la lista de administración de libros */
+.admin-books-list { display: flex; flex-direction: column; gap: 10px; max-height: 320px; overflow-y: auto; padding-right: 5px; text-align: left; }
+.admin-book-item { display: flex; align-items: center; justify-content: space-between; background: #f8fafc; padding: 10px; border-radius: 10px; border: 1px solid #e2e8f0; gap: 15px; }
+.admin-thumb { width: 40px; height: 50px; object-fit: cover; border-radius: 4px; border-bottom: 2px solid #facc15; }
+.admin-book-info { flex-grow: 1; }
+.admin-book-info h4 { margin: 0; color: #1e3a8a; font-size: 1rem; }
+.admin-book-info p { margin: 0; color: #64748b; font-size: 0.85rem; }
+.btn-delete { background: #fee2e2; color: #ef4444; border: none; padding: 8px 12px; border-radius: 8px; font-weight: bold; cursor: pointer; transition: background 0.2s; }
+.btn-delete:hover { background: #fecaca; }
+
+.text-muted { color: #94a3b8; text-align: center; }
+.btn-link {
+  background: none; border: none; color: #2563eb; 
+  cursor: pointer; text-decoration: underline; font-weight: bold;
+}

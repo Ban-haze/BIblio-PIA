@@ -1,0 +1,48 @@
+.login-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+.login-box {
+  background: white;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 400px;
+  border-top: 8px solid #1e40af; /* Azul fuerte */
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.header-decor {
+  position: absolute;
+  top: 0; right: 0;
+  width: 60px; height: 60px;
+  background: #facc15; /* Amarillo */
+  border-bottom-left-radius: 100%;
+}
+h1 { color: #1e3a8a; margin-bottom: 5px; font-size: 2.5rem; }
+p { color: #64748b; margin-bottom: 30px; }
+label { display: block; text-align: left; font-weight: bold; color: #1e3a8a; margin-bottom: 8px; }
+input {
+  width: 100%; padding: 12px; border: 2px solid #bfdbfe;
+  border-radius: 10px; margin-bottom: 5px; box-sizing: border-box;
+  font-size: 1rem;
+}
+small { display: block; text-align: left; color: #94a3b8; margin-bottom: 20px; font-size: 0.8rem; }
+.btn-blue {
+  width: 100%; background: #2563eb; color: white; padding: 15px;
+  border: none; border-radius: 12px; font-weight: bold; font-size: 1.1rem;
+  cursor: pointer; transition: background 0.3s;
+}
+.btn-blue:hover { background: #1d4ed8; }
+.divider { margin: 20px 0; color: #cbd5e1; position: relative; }
+.btn-white {
+  width: 100%; background: white; color: #334155; padding: 15px;
+  border: 2px solid #e2e8f0; border-radius: 12px; font-weight: bold;
+  cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 10px;
+}
+.g-icon { color: #ef4444; font-weight: bold; font-size: 1.2rem; }
